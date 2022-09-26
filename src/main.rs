@@ -1,3 +1,10 @@
+mod kmonad;
+
 fn main() {
-	println!("Hello, world!");
+	let k = kmonad::Kmonad::new(kmonad::config::Config {
+		input: "in".to_string(),
+		output: "out".to_string(),
+	});
+
+	println!("cfg: {}\nvec: {}", k.config.input, k.layers.len());
 }
